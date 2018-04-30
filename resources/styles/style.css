@@ -402,16 +402,13 @@ footer a:hover {
 
 
 
-@media only screen and (max-width : 1200px) {
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px) {
 
 body {
   margin: 1rem;
-  font-size: 16px;
-}
-
-
-p {
-  font-size: 1.5rem; 
+  font-size: 1em;
 }
 
 .top-nav {
@@ -524,6 +521,10 @@ display: none;
 .course-card-mobile {
   display: flex;
   flex-direction: column;
+}
+
+.section-courses {
+  display: none;
 }
 
 }
