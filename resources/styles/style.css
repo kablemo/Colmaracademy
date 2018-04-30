@@ -403,8 +403,10 @@ footer a:hover {
 
 
 @media only screen
-and (max-width : 1135px) {
-
+and (min-device-width: 414px)
+and (max-device-height: 736px)
+and (-webkit-device-pixel-ratio: 3) {
+  
 body {
   margin: 1rem;
   font-size: 1em;
