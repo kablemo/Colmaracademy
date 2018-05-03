@@ -1,3 +1,5 @@
+/* Codecademy Project - Colmar Academy by Ziemowit Kaczmarski */
+
 html {
   background-color: #eef6f7;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
@@ -11,8 +13,9 @@ body {
 
 h1 {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   font-weight: 800;
+  margin: 0rem;
 }
 
 h2 {
@@ -39,7 +42,9 @@ img {
 
 p {
   line-height: 1.5rem;
+  font-family: Georgia, serif;
 }
+
 /* Header */
 
 header {
@@ -64,9 +69,15 @@ header {
 
 .logo-icon {
   margin: 0rem 0rem 0rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo-typo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav {
@@ -80,11 +91,11 @@ nav a {
   color: #020201;
   text-decoration: none;
   text-transform: none;
-  transition: 300ms ease-in;
+  transition: 100ms ease-in-out;
 }
 
 nav a:hover {
-  color: #4b92ee;
+  color: gold;
 }
 
 /* MAIN CONTENT */
@@ -146,10 +157,15 @@ button {
   border-radius: 3px;
 }
 
+button:hover {
+  background-color: #2b78cc;
+  cursor: pointer;
+}
+
 /* Information section */
 
-.section-information {
-  border: 2px solid purple;
+.section-information,
+.section-information-thesis {
   background-color: white;
   width: 100%;
   display: flex;
@@ -162,14 +178,12 @@ button {
 }
 
 .section-information-container {
-  border: 2px solid pink;
   margin: 2rem 0rem 2rem 1.5rem;
   width: 100%;
   display: flex;
 }
 
 .left-column {
-  border: 2px solid aquamarine;
   width: 60%;
   display: flex;
   flex-direction: column;
@@ -177,7 +191,6 @@ button {
 }
 
 .right-column {
-  border: 2px solid lime;
   width: 40%;
   margin-left: 24px;
   display: flex;
@@ -186,7 +199,6 @@ button {
 }
 
 .hero-image-information {
-  border: 2px solid blue;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -200,7 +212,6 @@ button {
 }
 
 .section-information-description {
-  border: 2px solid orange;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -220,21 +231,23 @@ button {
     /* News section */
 
   .news-section {
-    border: 2px solid gold;
     width: 100%;
   }
 
   .news-card {
-    border: 2px solid silver;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     padding: 1rem;
+    border-top: 1px solid #e6e7e8;
+
   }
 
   .news-card:last-child {
     background-color: #eef6f7;
+    border-bottom: 1px solid #e6e7e8;
+
   }
 
   .news-card p,
@@ -244,12 +257,10 @@ button {
   }
 
   .news-picture {
-    border: 2px solid crimson;
     width: 35%;
   }
 
   .news-title {
-    border: 2px solid deepskyblue;
     width: 65%;
   }
 
@@ -262,17 +273,58 @@ button {
     color: #4b92ee;
   }
 
-
 /* Courses section */
 
 .section-courses {
-  border: 2px solid purple;
   display: flex;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
+  margin: 0rem 6rem;
+}
+
+.grid-courses {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  height: auto;
+  grid-template-columns: 31% 31% 31%;
+  grid-gap: 32px;
+  color: #444;
+}
+
+.course {
+  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.course p {
+  word-break: normal;
+  width: 100%;
+  margin: 0px 0px;
+}
+
+.course img {
+  width: 100%;
+}
+
+.course h3 {
+  margin: 1rem 0rem 0rem 0rem;
+}
+
+.course-picture {
+  margin: 0rem;
+}
+
+.course-description {
+  padding: 0rem 1rem 1.5rem 1rem;
 }
 
 .section-courses-container {
-  border: 2px solid pink;
   width: 100%;
   margin: 0px 56px 32px 56px;
   display: flex;
@@ -281,23 +333,19 @@ button {
 }
 
 .section-title {
-  border: 2px solid navy;
   text-align: center;
   margin: 32px 0px;
 }
 
 .courses-section {
-  border: 2px solid lime;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-
 }
 
 .course-card {
-  /* border: 2px solid crimson; */
   width: 30%;
   height: auto;
   margin: 1rem;
@@ -313,12 +361,20 @@ button {
 }
 
 .courses-section-mobile {
-  width: 100%;
+  width: auto;
+  margin: 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   display: none;
+}
+
+.courses-section-mobile a {
+  color: black;
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-decoration: none;
 }
 
 .course-card-mobile {
@@ -328,20 +384,22 @@ button {
   height: 4.5rem;
   width: 100%;
   margin: 0.5rem 4rem;
-  background-color: grey;
-  border-radius: 0.25rem;
+  background-color: #e6e7e8;
+}
+
+.course-card-mobile:hover {
+  background-color: #4b92ee;
+  color: white;
 }
 
 /* Video section */
 
 .section-video {
-  border: 2px solid purple;
   display: flex;
   justify-content: flex-start;
 }
 
 .section-video-container {
-  border: 2px solid pink;
   margin: 32px 0px 32px 24px;
   width: 100%;
   display: flex;
@@ -350,19 +408,29 @@ button {
 }
 
 .section-video-title {
-  border: 2px solid navy;
   text-align: center;
   margin: 32px 0px;
 }
 
 .column-section {
   width: 100%;
-  border: 2px solid yellow;
 }
 
 video {
   width: 100%;
   height: auto;
+}
+
+.mobile-hero-video {
+  display: none;
+  padding: 0rem;
+  margin: 0rem;
+}
+
+.mobile-hero-video video {
+  width: 100%;
+  height: auto;
+  margin: 0rem;
 }
 
 /* Footer */
@@ -373,7 +441,6 @@ footer {
   justify-content: space-between;
   align-items: center;
   margin: 0rem 1.8rem;
-  border: 2px solid yellowgreen;
 }
 
 footer ul li {
@@ -397,40 +464,59 @@ footer a:hover {
 
 .top-nav-mobile {
   display: none;
-  background-color: gold;
 }
 
-
+/* Media queries */
 
 @media only screen
-and (min-device-width: 414px)
-and (max-device-height: 736px)
-and (-webkit-device-pixel-ratio: 3) {
-  
+and (max-width: 630px) {
+
+html {
+  font-size: calc(22px + 6 * ((100vw - 644px) / 1100));
+}
+
 body {
-  margin: 1rem;
-  font-size: 1em;
+
 }
 
 .top-nav {
   display: none;
-}
-
-.top-nav-mobile {
-  visibility: visible;
-  display: flex;
-  margin: 1.8rem;
-  height: 64px;
-}
-
-
-.section-hero-container {
-  flex-direction: column;
   margin: 0rem;
 }
 
+.top-nav-mobile {
+  display: inline;
+  display: flex;
+  justify-content: space-between;
+  align-items: space-between;
+  width: 100%;
+  height: 64px;
+  background-color: white;
+}
+
+.top-nav-mobile nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.mobile-nav-icon {
+  height: 2rem;
+  width: 2rem;
+  margin: 0;
+}
+
+.logo {
+  display: none;
+}
+
+.section-hero-container {
+  flex-direction: column;
+  margin: 1rem;
+}
+
 .section-hero-description {
-  padding: 16px;
   width: 100%;
 }
 
@@ -439,7 +525,6 @@ br {
 }
 
 .section-information-container {
-  border: 2px solid pink;
   margin: 2rem 1rem 2rem 1rem;
   width: 100%;
   display: flex;
@@ -447,8 +532,8 @@ br {
 }
 
 button {
-  width: 95%;
-  margin: 1.5rem 1rem 2rem 1rem;
+  width: 100%;
+  margin-left: -0.75rem;
 }
 
 .left-column {
@@ -461,7 +546,6 @@ button {
 }
 
 .hero-image-information {
-  border: 2px solid blue;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -480,7 +564,6 @@ button {
 }
 
 .section-information-description {
-  border: 2px solid orange;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -500,11 +583,19 @@ button {
 .desktop-image {
   display: none;
 }
+
 .news-picture {
   width: 100%;
 }
+
 .news-card {
-  flex-direction: column;
+border-left: none;
+flex-direction: column;
+}
+
+.news-card:last-child {
+  background-color: white;
+  border-bottom: none;
 }
 
 .news-title {
@@ -524,7 +615,32 @@ display: none;
   flex-direction: column;
 }
 
+
 .section-courses {
+  display: none;
+}
+
+.grid-courses {
+  display: none;
+}
+
+.section-information-thesis,
+.section-information-thesis .right-column {
+  display: none;
+}
+
+.mobile-hero-video {
+  display: inline;
+  background-color: none;
+  width: 100%;
+}
+
+footer {
+  position: bottom;
+  font-size: 0.75rem;
+}
+
+footer ul {
   display: none;
 }
 
